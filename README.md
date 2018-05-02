@@ -4,7 +4,7 @@ This is a MWE of a failing Okbuck (v0.37.3) build with the Butterknife annotatio
 
 Notes: 
 * Occurs with both Butterknife versions `8.8.1` and `9.0.0-SNAPSHOT`
-* Using Sdkman for Kotlin (v1.2.40)
+* Occurs with both Sdkman for Kotlin (v1.2.40) and the bundled Kotlin
 
 To reproduce:
 run: `./buckw build //app:bin_release`
@@ -12,7 +12,7 @@ run: `./buckw build //app:bin_release`
 and observe the following error message/stacktrace:
 
 ```Build failed: Command failed with exit code 2.
-stderr: logging: using Kotlin home directory /Users/michael_dang/.sdkman/candidates/kotlin/1.2.40
+stderr: logging: using Kotlin home directory /Users/michael_dang/Airbnb/okbuck-kapt-mwe/.okbuck/cache/kotlin_home/libexec
 logging: configuring the compilation environment
 exception: java.util.ServiceConfigurationError: javax.annotation.processing.Processor: Provider butterknife.compiler.ButterKnifeProcessor could not be instantiated
 	at java.util.ServiceLoader.fail(ServiceLoader.java:232)
@@ -60,8 +60,7 @@ exception: java.util.ServiceConfigurationError: javax.annotation.processing.Proc
 	at com.facebook.buck.util.concurrent.WeightedListeningExecutorService.lambda$submit$2(WeightedListeningExecutorService.java:104)
 	at com.facebook.buck.util.concurrent.WeightedListeningExecutorService.lambda$submitWithSemaphore$0(WeightedListeningExecutorService.java:78)
 	at com.google.common.util.concurrent.AbstractTransformFuture$AsyncTransformFuture.doTransform(AbstractTransformFuture.java:206)
-	at com.google.common.util.concurrent.AbstractTransformFuture$AsyncTransformFuture.doTransform(AbstractTransformFuture.j  1 # okbuck_kapt_mwe
-ava:195)
+	at com.google.common.util.concurrent.AbstractTransformFuture$AsyncTransformFuture.doTransform(AbstractTransformFuture.java:195)
 	at com.google.common.util.concurrent.AbstractTransformFuture.run(AbstractTransformFuture.java:115)
 	at com.google.common.util.concurrent.MoreExecutors$5$1.run(MoreExecutors.java:999)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
