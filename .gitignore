@@ -9,3 +9,5 @@ buck-out/
 .buckd/
 **/BUCK
 .buckconfig.local
+!gradle/wrapper/gradle-wrapper.jar
+
