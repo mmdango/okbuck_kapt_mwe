@@ -1,0 +1,11 @@
+build/
+.okbuck/
+buck-out/
+.DS_STORE
+.settings/
+.idea/
+*.iml
+.gradle/
+.buckd/
+**/BUCK
+.buckconfig.local
