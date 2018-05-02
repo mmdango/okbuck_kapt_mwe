@@ -2,7 +2,9 @@
 
 This is a MWE of a failing Okbuck (v0.37.3) build with the Butterknife annotation processor.
 
-Notes: Happens with both Butterknife versions 8.8.1 and 9.0.0-SNAPSHOT
+Notes: 
+* Occurs with both Butterknife versions `8.8.1` and `9.0.0-SNAPSHOT`
+* Using Sdkman for Kotlin (v1.2.40)
 
 To reproduce:
 run: `./buckw build //app:bin_release`
@@ -80,4 +82,4 @@ Caused by: java.lang.ClassNotFoundException: com.sun.tools.javac.tree.JCTree$Vis
 
 
     When running <kotlinc>.
-    When building rule //app:src_release.```
+    When building rule //app:src_release.
