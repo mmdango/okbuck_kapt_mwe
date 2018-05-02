@@ -5,5 +5,5 @@ ext {
     targetSdkVersion = 27
     minSdkVersion = 21
     kotlinVersion = '1.2.40'
-    butterknifeVersion = '8.8.1'
+    butterknifeVersion = '9.0.0-SNAPSHOT'
 }

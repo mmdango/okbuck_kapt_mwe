@@ -29,7 +29,8 @@ allprojects {
 apply plugin: 'com.uber.okbuck'
 
 okbuck {
-    buckBinary = "com.github.facebook:buck:923205a0a1b6e2c9a32591712ce726370f23c14e@pex"
+    buckBinary = "com.github.airbnb:buck:73a538be7dc17fd85115571979c1659d56ab0b3b@pex" // "null" as parent classloader
+    // buckBinary = "com.github.facebook:buck:923205a0a1b6e2c9a32591712ce726370f23c14e@pex" // getSystemToolClassLoader as parent classloader
     kotlin {
         // From properties.gradle
         version = project.ext.kotlinVersion
@@ -45,10 +46,14 @@ okbuck {
     lint {
         disabled = true
     }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
+    extraBuckOpts = [
+      "app": [
+        "android_library": [
+          // Uncomment the line below to set warnings as errors for all kotlin compliation
+          // 'extra_kotlinc_arguments = ["-Werror"]'
+        ].toSet()
+      ]
+    ]
 }
 
 task wrapper(type: Wrapper) {
